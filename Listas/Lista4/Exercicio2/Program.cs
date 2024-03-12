@@ -5,23 +5,20 @@ class Program
 {
     static void Main(string[] args)
     {
-        System.Console.WriteLine("Digite uma altura de 1 a 9:");
+        const int ALTURA_MINIMA = 1;
+        const int ALTURA_MAXIMA = 9;
+        System.Console.WriteLine("Digite uma altura de " + ALTURA_MINIMA + " a " + ALTURA_MAXIMA + ":");
         int altura = int.Parse(Console.ReadLine());
-        while(altura < 1 || altura > 9)
+        while(altura < ALTURA_MINIMA || altura > ALTURA_MAXIMA)
         {
-            System.Console.WriteLine("altura invalida, insira uma altura de 1 a 9");
+            System.Console.WriteLine("altura invalida, insira uma altura de " + ALTURA_MINIMA + " a " + ALTURA_MAXIMA);
             altura = int.Parse(Console.ReadLine());
         }
-        int coluna = 1;
         for(int linha = 1; linha <= altura; linha++)
         {
-            while(coluna <= linha)
+            for(int numero = 1; numero <= linha; numero++)
             {
-                for(int numero = 1; numero <= coluna; numero++)
-                {
-                    System.Console.Write(numero);
-                }
-                coluna++;
+                System.Console.Write(numero);
             }
             System.Console.WriteLine();
         }
